@@ -1,6 +1,6 @@
 namespace PromKnight.ParseTorrentTitle.Tests;
 
-public class SourceTests
+public class SourceTests: TestBase
 {
     [Theory]
     [InlineData("Nocturnal Animals 2016 VFF 1080p BluRay DTS HEVC-HD2", "bluray")]
@@ -14,7 +14,7 @@ public class SourceTests
     [InlineData("The.OA.1x08.L.Io.Invisibile.ITA.WEBMux.x264-UBi.mkv", "webmux")]
     public void DetectSource(string title, string source)
     {
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal(source, result.Source);
     }
 }

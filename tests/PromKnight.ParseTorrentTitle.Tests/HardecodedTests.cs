@@ -1,13 +1,13 @@
 namespace PromKnight.ParseTorrentTitle.Tests;
 
-public class HardecodedTests
+public class HardecodedTests: TestBase
 {
     [Theory]
     [InlineData("Ghost In The Shell 2017 1080p HC HDRip X264 AC3-EVO", "True")]
     [InlineData("Have I Got News For You S53E02 EXTENDED 720p HDTV x264-QPEL", null)]
     public void DetectHardcoded(string title, string hardcoded)
     {
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal(hardcoded, result.Hardcoded);
     }
 }

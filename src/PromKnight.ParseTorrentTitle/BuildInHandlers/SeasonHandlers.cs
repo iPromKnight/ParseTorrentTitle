@@ -5,6 +5,7 @@ internal static class SeasonHandlers
     internal static readonly List<Handler> Handlers =
     [
         new(DefaultHandlerNames.Season, new Regex(@"(?i)\sSeason\s(\d+(-\d+)?)\sCOMPLETE", RegexOptions.IgnoreCase), new(type: "integer", removeRawFromTitle: true)),
+        new(DefaultHandlerNames.Season, new Regex(@"(?i)\ss(\d{1,2}(-\d{1,2})?)\s", RegexOptions.IgnoreCase), new(type: "integer", removeRawFromTitle: true)),
         new(DefaultHandlerNames.Season, new Regex(@"(?:complete\W|seasons?\W|\W|^)((?:s\d{1,2}[., +/\\&-]+)+s\d{1,2}\b)", RegexOptions.IgnoreCase), new(type: "integer")),
         new(DefaultHandlerNames.Season, new Regex(@"(?:complete\W|seasons?\W|\W|^)[([]?(s\d{2,}-\d{2,}\b)[)\]]?", RegexOptions.IgnoreCase), new(type: "integer")),
         new(DefaultHandlerNames.Season, new Regex(@"(?:complete\W|seasons?\W|\W|^)[([]?(s[1-9]-[2-9]\b)[)\]]?", RegexOptions.IgnoreCase), new(type: "integer")),

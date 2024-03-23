@@ -1,6 +1,6 @@
 namespace PromKnight.ParseTorrentTitle.Tests;
 
-public class GroupTests
+public class GroupTests: TestBase
 {
     [Theory]
     [InlineData("Nocturnal Animals 2016 VFF 1080p BluRay DTS HEVC-HD2", "HD2")]
@@ -9,7 +9,7 @@ public class GroupTests
     [InlineData("Western - L'homme qui n'a pas d'�toile-1955.Multi.DVD9", null)]
     public void DetectGroup(string title, string group)
     {
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal(group, result.Group);
     }
 }

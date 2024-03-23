@@ -3,5 +3,6 @@ namespace PromKnight.ParseTorrentTitle;
 public enum TorrentType
 {
     Tv,
-    Movie
+    Movie,
+    Unknown
 }

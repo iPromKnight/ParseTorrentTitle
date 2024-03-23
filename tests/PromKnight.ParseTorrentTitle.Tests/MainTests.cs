@@ -1,13 +1,13 @@
 namespace PromKnight.ParseTorrentTitle.Tests;
 
-public class MainTests
+public class MainTests: TestBase
 {
     [Fact]
     public void SonsOfAnarchy()
     {
         var title = "sons.of.anarchy.s05e10.480p.BluRay.x264-GAnGSteR";
 
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal("sons of anarchy", result.Title);
         Assert.Equal("480p", result.Resolution);
         Assert.Equal("5", result.Seasons.First().ToString());
@@ -16,13 +16,23 @@ public class MainTests
         Assert.Equal("x264", result.Codec);
         Assert.Equal("GAnGSteR", result.Group);
     }
+    
+    [Fact]
+    public void CriminalMinds()
+    {
+        var title = "Criminal Minds Season 3 Complete x264 [i_c]";
+
+        var result = Parser.Parse(title);
+        Assert.Equal("3", result.Seasons?.First().ToString());
+        Assert.Equal("Criminal Minds", result.Title);
+    }
 
     [Fact]
     public void ColorOfNight()
     {
         var title = "Color.Of.Night.Unrated.DC.VostFR.BRrip.x264";
 
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal("Color Of Night", result.Title);
         Assert.Equal("True", result.Unrated);
         Assert.Equal("vostfr", result.Language);
@@ -35,7 +45,7 @@ public class MainTests
     {
         var title = "Da Vinci Code DVDRip";
 
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal("Da Vinci Code", result.Title);
         Assert.Equal("dvdrip", result.Source);
     }
@@ -45,7 +55,7 @@ public class MainTests
     {
         var title = "Some.girls.1998.DVDRip";
 
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal("Some girls", result.Title);
         Assert.Equal("dvdrip", result.Source);
         Assert.Equal("1998", result.Year);
@@ -56,7 +66,7 @@ public class MainTests
     {
         var title = "Ecrit.Dans.Le.Ciel.1954.MULTI.DVDRIP.x264.AC3-gismo65";
 
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal("Ecrit Dans Le Ciel", result.Title);
         Assert.Equal("dvdrip", result.Source);
         Assert.Equal("1954", result.Year);
@@ -71,7 +81,7 @@ public class MainTests
     {
         var title = "2019 After The Fall Of New York 1983 REMASTERED BDRip x264-GHOULS";
 
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal("2019 After The Fall Of New York", result.Title);
         Assert.Equal("bdrip", result.Source);
         Assert.Equal("True", result.Remastered);
@@ -85,7 +95,7 @@ public class MainTests
     {
         var title = "Ghost In The Shell 2017 720p HC HDRip X264 AC3-EVO";
 
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal("Ghost In The Shell", result.Title);
         Assert.Equal("hdrip", result.Source);
         Assert.Equal("True", result.Hardcoded);
@@ -101,7 +111,7 @@ public class MainTests
     {
         var title = "Rogue One 2016 1080p BluRay x264-SPARKS";
 
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal("Rogue One", result.Title);
         Assert.Equal("bluray", result.Source);
         Assert.Equal("2016", result.Year);
@@ -115,7 +125,7 @@ public class MainTests
     {
         var title = "Desperation 2006 Multi Pal DvdR9-TBW1973";
 
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal("Desperation", result.Title);
         Assert.Equal("dvd", result.Source);
         Assert.Equal("2006", result.Year);
@@ -129,7 +139,7 @@ public class MainTests
     {
         var title = "Maman, j'ai rat� l'avion 1990 VFI 1080p BluRay DTS x265-HTG";
 
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal("Maman, j'ai rat� l'avion", result.Title);
         Assert.Equal("bluray", result.Source);
         Assert.Equal("1990", result.Year);

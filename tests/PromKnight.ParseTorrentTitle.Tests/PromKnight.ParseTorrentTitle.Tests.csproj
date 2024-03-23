@@ -18,8 +18,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\PromKnight.ParseTorrentTitle\PromKnight.ParseTorrentTitle.csproj" />
-  </ItemGroup>
-
 </Project>

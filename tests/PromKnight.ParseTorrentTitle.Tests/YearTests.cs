@@ -1,6 +1,6 @@
 namespace PromKnight.ParseTorrentTitle.Tests;
 
-public class YearTests
+public class YearTests: TestBase
 {
     [Theory]
     [InlineData("Dawn.of.the.Planet.of.the.Apes.2014.HDRip.XViD-EVO", "2014")]
@@ -9,7 +9,7 @@ public class YearTests
     [InlineData("2012 2009 1080p BluRay x264 REPACK-METiS", "2009")]
     public void DetectYear(string title, string year)
     {
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal(year, result.Year);
     }
 }

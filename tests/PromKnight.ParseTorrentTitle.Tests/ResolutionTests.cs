@@ -1,6 +1,6 @@
 namespace PromKnight.ParseTorrentTitle.Tests;
 
-public class ResolutionTests
+public class ResolutionTests: TestBase
 {
     [Theory]
     [InlineData("Annabelle.2014.1080p.PROPER.HC.WEBRip.x264.AAC.2.0-RARBG", "1080p")]
@@ -9,7 +9,7 @@ public class ResolutionTests
     [InlineData("The Smurfs 2 2013 COMPLETE FULL BLURAY UHD (4K) - IPT EXCLUSIVE", "4k")]
     public void DetectResolution(string title, string resolution)
     {
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal(resolution, result.Resolution);
     }
 }

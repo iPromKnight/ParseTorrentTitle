@@ -7,7 +7,6 @@ public class DefaultHandlers
     /// </summary>
     internal static IReadOnlyList<Handler> Handlers =>
     [
-        ..MiscHandlers.Handlers,
         ..YearHandlers.Handlers,
         ..AudioHandlers.Handlers,
         ..SourceHandlers.Handlers,
@@ -16,13 +15,14 @@ public class DefaultHandlers
         ..GroupHandlers.Handlers,
         ..CodecHandlers.Handlers,
         ..LanguageHandlers.Handlers,
+        ..MiscHandlers.Handlers,
     ];
 
     internal static List<Regex> TvRegexes { get; set; } =
     [
         new(@"[se]\d\d", RegexOptions.IgnoreCase),
         new(@"\b(tv|complete)\b", RegexOptions.IgnoreCase),
-        new(@"\b(saison|stage).?\d", RegexOptions.IgnoreCase),
+        new(@"\b(saisons?|stages?|seasons?).?\d", RegexOptions.IgnoreCase),
         new(@"[a-z]\s?\-\s?\d{2,4}\b", RegexOptions.IgnoreCase),
         new(@"\d{2,4}\s?\-\s?\d{2,4}\b", RegexOptions.IgnoreCase),
     ];

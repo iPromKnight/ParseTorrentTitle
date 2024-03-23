@@ -1,6 +1,6 @@
 namespace PromKnight.ParseTorrentTitle.Tests;
 
-public class ProperTests
+public class ProperTests: TestBase
 {
     [Theory]
     [InlineData("Into the Badlands S02E07 PROPER 720p HDTV x264-W4F", "True")]
@@ -8,7 +8,7 @@ public class ProperTests
     [InlineData("Have I Got News For You S53E02 EXTENDED 720p HDTV x264-QPEL", null)]
     public void DetectProper(string title, string language)
     {
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal(language, result.Proper);
     }
 }

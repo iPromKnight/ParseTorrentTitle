@@ -4,11 +4,13 @@ public class ParserResult(Dictionary<string, string> results) : IReadOnlyDiction
 {
     private readonly ReadOnlyDictionary<string, string> _results = new(results);
 
-    public string GetTitle() => this[DefaultHandlerNames.Title];
+    public string? GetTitle() => this[DefaultHandlerNames.Title];
 
-    public string this[string handlerName]
+    public string? this[string handlerName]
     {
+#pragma warning disable CS8766 // Nullability of reference types in return type doesn't match implicitly implemented member (possibly because of nullability attributes).
         get
+#pragma warning restore CS8766 // Nullability of reference types in return type doesn't match implicitly implemented member (possibly because of nullability attributes).
         {
             handlerName = handlerName.ToLower().Trim();
             return _results.GetValueOrDefault(handlerName);

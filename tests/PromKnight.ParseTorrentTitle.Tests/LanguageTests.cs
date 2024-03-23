@@ -1,6 +1,6 @@
 namespace PromKnight.ParseTorrentTitle.Tests;
 
-public class LanguageTests
+public class LanguageTests: TestBase
 {
     [Theory]
     [InlineData("Deadpool 2016 1080p BluRay DTS Rus Ukr 3xEng HDCL", "rus")]
@@ -17,7 +17,7 @@ public class LanguageTests
     [InlineData("South.Park.S21E10.FiNAL.AHDTV.x264-NTROPiC", null)]
     public void DetectLanguage(string title, string language)
     {
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal(language, result.Language);
     }
 }

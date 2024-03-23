@@ -1,6 +1,6 @@
 namespace PromKnight.ParseTorrentTitle.Tests;
 
-public class CodecTests
+public class CodecTests : TestBase
 {
     [Theory]
     [InlineData("Nocturnal Animals 2016 VFF 1080p BluRay DTS HEVC-HD2", "hevc")]
@@ -11,7 +11,7 @@ public class CodecTests
     [InlineData("Jimmy Kimmel 2017 05 03 720p HDTV DD5 1 -CTL", null)]
     public void DetectCodec(string title, string codec)
     {
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal(codec, result.Codec);
     }
 }

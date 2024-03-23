@@ -117,14 +117,22 @@ public sealed class Handler
 
     private static string HandleIntegerOrRange(string val)
     {
+        if (val.Contains(" to ", StringComparison.OrdinalIgnoreCase))
+        {
+            val = val.Replace(" to ", "-");
+        }
+
         if (!val.Contains('-'))
         {
-            return int.Parse(val).ToString();
+            return int.TryParse(val, out var number) ? number.ToString() : string.Empty;
         }
 
         var rangeParts = val.Split("-");
-        var start = int.Parse(rangeParts[0]);
-        var end = int.Parse(rangeParts[1]);
+        if (rangeParts.Length != 2 || !int.TryParse(rangeParts[0].Replace("s", ""), out var start) || !int.TryParse(rangeParts[1].Replace("s", ""), out var end))
+        {
+            return string.Empty;
+        }
+
         var rangeValues = Enumerable.Range(start, end - start + 1);
         return string.Join(",", rangeValues);
     }

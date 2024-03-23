@@ -1,6 +1,6 @@
 namespace PromKnight.ParseTorrentTitle.Tests;
 
-public class AudioTests
+public class AudioTests : TestBase
 {
     [Theory]
     [InlineData("Nocturnal Animals 2016 VFF 1080p BluRay DTS HEVC-HD2", "dts")]
@@ -14,7 +14,7 @@ public class AudioTests
     [InlineData("Detroit.2017.BDRip..GERMAN.x264-SPECTRE", null)]
     public void DetectAudio(string title, string audio)
     {
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal(audio, result.Audio);
     }
 }

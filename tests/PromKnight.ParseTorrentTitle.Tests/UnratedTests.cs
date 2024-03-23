@@ -1,6 +1,6 @@
 namespace PromKnight.ParseTorrentTitle.Tests;
 
-public class UnratedTests
+public class UnratedTests: TestBase
 {
     [Theory]
     [InlineData("Identity.Thief.2013.Vostfr.UNRATED.BluRay.720p.DTS.x264-Nenuko", "True")]
@@ -8,7 +8,7 @@ public class UnratedTests
     [InlineData("Have I Got News For You S53E02 EXTENDED 720p HDTV x264-QPEL", null)]
     public void DetectUnrated(string title, string unrated)
     {
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal(unrated, result.Unrated);
     }
 }

@@ -1,6 +1,6 @@
 namespace PromKnight.ParseTorrentTitle.Tests;
 
-public class RepackTests
+public class RepackTests: TestBase
 {
     [Theory]
     [InlineData("Silicon Valley S04E03 REPACK HDTV x264-SVA", "True")]
@@ -8,7 +8,7 @@ public class RepackTests
     [InlineData("Have I Got News For You S53E02 EXTENDED 720p HDTV x264-QPEL", null)]
     public void DetectRepack(string title, string repacked)
     {
-        var result = Parser.Default.Parse(title);
+        var result = Parser.Parse(title);
         Assert.Equal(repacked, result.Repack);
     }
 }
