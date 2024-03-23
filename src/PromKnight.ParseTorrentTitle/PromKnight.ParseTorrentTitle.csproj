@@ -4,6 +4,21 @@
         <OutputType>Library</OutputType>
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
+        <Version>1.0.0</Version>
+        <IsPackable>true</IsPackable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Title>PromKnight.ParseTorrentTitle</Title>
+        <Authors>iPromKnight</Authors>
+        <Description>A port of PTN from python to C#.</Description>
+        <PackageProjectUrl>https://github.com/iPromKnight/ParseTorrentTitle</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/iPromKnight/ParseTorrentTitle.git</RepositoryUrl>
+        <RepositoryType>Git</RepositoryType>
+        <PackageTags>ptn;parsetorrenttitle</PackageTags>
+        <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
     </PropertyGroup>
 
 </Project>
