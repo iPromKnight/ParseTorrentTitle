@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{199D53F1-8B0B-4938-ABC3-F9AC136B0282}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6A16EB89-83E2-4E9C-BA1A-44BA0AA9B1E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PromKnight.ParseTorrentTitle", "src\PromKnight.ParseTorrentTitle\PromKnight.ParseTorrentTitle.csproj", "{35EC68D0-5A8E-4A6C-A7DA-916A401292D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PromKnight.ParseTorrentTitle.Tests", "tests\PromKnight.ParseTorrentTitle.Tests\PromKnight.ParseTorrentTitle.Tests.csproj", "{A37B83C4-4700-4461-804A-46663348BAD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{35EC68D0-5A8E-4A6C-A7DA-916A401292D4} = {199D53F1-8B0B-4938-ABC3-F9AC136B0282}
+		{A37B83C4-4700-4461-804A-46663348BAD3} = {6A16EB89-83E2-4E9C-BA1A-44BA0AA9B1E3}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35EC68D0-5A8E-4A6C-A7DA-916A401292D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35EC68D0-5A8E-4A6C-A7DA-916A401292D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35EC68D0-5A8E-4A6C-A7DA-916A401292D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35EC68D0-5A8E-4A6C-A7DA-916A401292D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A37B83C4-4700-4461-804A-46663348BAD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A37B83C4-4700-4461-804A-46663348BAD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A37B83C4-4700-4461-804A-46663348BAD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A37B83C4-4700-4461-804A-46663348BAD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
